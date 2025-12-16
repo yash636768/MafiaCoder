@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MafiaCoder - The Underworld of Coding
+
+MafiaCoder is a full-stack web platform for web developers and competitive programmers, featuring a dark mafia underground theme.
+
+## Features
+
+- **Authentication**: JWT-based auth with User Profiles (Avatar, Bio, Skills).
+- **Dashboard**: Personal dashboard with stats, heatmap, and upcoming contests.
+- **Question Bank**: Explore problems by difficulty, company, and topic.
+- **Contest System**: Participate in contests and submit code (powered by Piston API).
+- **AI Consigliere**: AI-powered chat assistant for code help.
+- **Leaderboard**: Compete with other mafia members.
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (App Router), Tailwind CSS v4, Shadcn/UI style components.
+- **Backend**: Node.js, Express, MongoDB, Mongoose.
+- **AI**: Google Gemini API.
+- **Judge**: Piston API.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js
+- MongoDB
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1.  **Clone the repository** (if applicable)
+2.  **Install Dependencies**:
+    ```bash
+    cd client && npm install
+    cd ../server && npm install
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3.  **Environment Variables**:
+    - Create `server/.env` with:
+      ```env
+      PORT=5000
+      MONGO_URI=mongodb://localhost:27017/mafiacoder
+      JWT_SECRET=your_secret_key
+      GEMINI_API_KEY=your_gemini_key
+      ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4.  **Run the Application**:
+    - **Backend**:
+      ```bash
+      cd server
+      npm run dev
+      ```
+    - **Frontend**:
+      ```bash
+      cd client
+      npm run dev
+      ```
 
-## Learn More
+5.  **Access**: Open `http://localhost:3000`
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for details.
