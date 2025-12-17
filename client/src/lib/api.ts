@@ -10,9 +10,11 @@ const api = axios.create({
 // Add a request interceptor to attach token
 api.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem('token');
-        if (token) {
-            config.headers['x-auth-token'] = token;
+        if (typeof window !== 'undefined') {
+            const token = localStorage.getItem('token');
+            if (token) {
+                config.headers['x-auth-token'] = token;
+            }
         }
         return config;
     },
