@@ -11,7 +11,15 @@
 
 ## Backend (Node.js/Express)
 
-1.  **Render / Heroku / Railway**:
+1.  **Vercel (Recommended for simple serverless)**:
+    - Connect your GitHub repo.
+    - Create a new project for `server`.
+    - Set Root Directory to `server`.
+    - Vercel will detect `vercel.json`.
+    - Add Environment Variables.
+    - Deploy.
+    
+2.  **Render / Heroku / Railway**:
     - Connect your GitHub repo.
     - Set Root Directory to `server`.
     - Set Build Command: `npm install && npm run build`.
