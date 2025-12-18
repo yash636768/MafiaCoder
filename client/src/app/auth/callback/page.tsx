@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 
-export default function AuthCallbackPage() {
+function AuthCallback() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const { login } = useAuth();
@@ -43,5 +43,17 @@ export default function AuthCallbackPage() {
                 </CardContent>
             </Card>
         </div>
+    );
+}
+
+export default function AuthCallbackPage() {
+    return (
+        <Suspense fallback={
+            <div className="flex items-center justify-center min-h-screen p-4 text-muted-foreground">
+                Loading authentication...
+            </div>
+        }>
+            <AuthCallback />
+        </Suspense>
     );
 }
